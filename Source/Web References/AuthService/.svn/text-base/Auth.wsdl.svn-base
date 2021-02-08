@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://idtechproducts.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://idtechproducts.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://idtechproducts.com/">
+      <s:element name="SecurityReset">
+        <s:complexType />
+      </s:element>
+      <s:element name="SecurityResetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityResetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SecuredWebServiceHeader" type="tns:SecuredWebServiceHeader" />
+      <s:complexType name="SecuredWebServiceHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthenticatedToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdminSecurity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupervisorSecurity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatorSecurity" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="AuthenticateUser">
+        <s:complexType />
+      </s:element>
+      <s:element name="AuthenticateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestSecurityPassword">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestSecurityPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestSecurityPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductModel">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProductModelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductModelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SecurityResetSoapIn">
+    <wsdl:part name="parameters" element="tns:SecurityReset" />
+  </wsdl:message>
+  <wsdl:message name="SecurityResetSoapOut">
+    <wsdl:part name="parameters" element="tns:SecurityResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SecurityResetSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="TestSecurityPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:TestSecurityPassword" />
+  </wsdl:message>
+  <wsdl:message name="TestSecurityPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:TestSecurityPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSecurityPasswordSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetProductModelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductModel" />
+  </wsdl:message>
+  <wsdl:message name="GetProductModelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductModelSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="SecurityReset">
+      <wsdl:input message="tns:SecurityResetSoapIn" />
+      <wsdl:output message="tns:SecurityResetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input message="tns:AuthenticateUserSoapIn" />
+      <wsdl:output message="tns:AuthenticateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestSecurityPassword">
+      <wsdl:input message="tns:TestSecurityPasswordSoapIn" />
+      <wsdl:output message="tns:TestSecurityPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductModel">
+      <wsdl:input message="tns:GetProductModelSoapIn" />
+      <wsdl:output message="tns:GetProductModelSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SecurityReset">
+      <soap:operation soapAction="http://idtechproducts.com/SecurityReset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SecurityResetSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://idtechproducts.com/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AuthenticateUserSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestSecurityPassword">
+      <soap:operation soapAction="http://idtechproducts.com/TestSecurityPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TestSecurityPasswordSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductModel">
+      <soap:operation soapAction="http://idtechproducts.com/GetProductModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetProductModelSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SecurityReset">
+      <soap12:operation soapAction="http://idtechproducts.com/SecurityReset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SecurityResetSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://idtechproducts.com/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AuthenticateUserSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestSecurityPassword">
+      <soap12:operation soapAction="http://idtechproducts.com/TestSecurityPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TestSecurityPasswordSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductModel">
+      <soap12:operation soapAction="http://idtechproducts.com/GetProductModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetProductModelSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://demo.idtechweb.com:2001/Auth.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://demo.idtechweb.com:2001/Auth.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

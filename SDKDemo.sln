@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDemo", "Source\SDKDemo.csproj", "{B4C2B03E-7DFB-4C60-889D-3436AD56F166}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		DebugEmbed|Any CPU = DebugEmbed|Any CPU
+		DebugEmbed|x64 = DebugEmbed|x64
+		DebugEmbed|x86 = DebugEmbed|x86
+		Obfuscate|Any CPU = Obfuscate|Any CPU
+		Obfuscate|x64 = Obfuscate|x64
+		Obfuscate|x86 = Obfuscate|x86
+		Release SDK Only|Any CPU = Release SDK Only|Any CPU
+		Release SDK Only|x64 = Release SDK Only|x64
+		Release SDK Only|x86 = Release SDK Only|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		ReleaseEmbed|Any CPU = ReleaseEmbed|Any CPU
+		ReleaseEmbed|x64 = ReleaseEmbed|x64
+		ReleaseEmbed|x86 = ReleaseEmbed|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Debug|x64.ActiveCfg = Debug|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Debug|x64.Build.0 = Debug|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Debug|x86.ActiveCfg = Debug|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Debug|x86.Build.0 = Debug|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.DebugEmbed|Any CPU.ActiveCfg = DebugEmbed|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.DebugEmbed|Any CPU.Build.0 = DebugEmbed|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.DebugEmbed|x64.ActiveCfg = DebugEmbed|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.DebugEmbed|x64.Build.0 = DebugEmbed|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.DebugEmbed|x86.ActiveCfg = DebugEmbed|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.DebugEmbed|x86.Build.0 = DebugEmbed|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Obfuscate|Any CPU.ActiveCfg = Obfuscate|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Obfuscate|Any CPU.Build.0 = Obfuscate|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Obfuscate|x64.ActiveCfg = Obfuscate|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Obfuscate|x64.Build.0 = Obfuscate|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Obfuscate|x86.ActiveCfg = Obfuscate|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Obfuscate|x86.Build.0 = Obfuscate|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release SDK Only|Any CPU.ActiveCfg = Release SDK Only|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release SDK Only|Any CPU.Build.0 = Release SDK Only|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release SDK Only|x64.ActiveCfg = Release SDK Only|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release SDK Only|x64.Build.0 = Release SDK Only|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release SDK Only|x86.ActiveCfg = Release SDK Only|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release SDK Only|x86.Build.0 = Release SDK Only|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release|x64.ActiveCfg = Release|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release|x64.Build.0 = Release|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release|x86.ActiveCfg = Release|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.Release|x86.Build.0 = Release|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.ReleaseEmbed|Any CPU.ActiveCfg = ReleaseEmbed|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.ReleaseEmbed|Any CPU.Build.0 = ReleaseEmbed|Any CPU
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.ReleaseEmbed|x64.ActiveCfg = ReleaseEmbed|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.ReleaseEmbed|x64.Build.0 = ReleaseEmbed|x64
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.ReleaseEmbed|x86.ActiveCfg = ReleaseEmbed|x86
+		{B4C2B03E-7DFB-4C60-889D-3436AD56F166}.ReleaseEmbed|x86.Build.0 = ReleaseEmbed|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19B5532B-B315-4480-83A3-AA76E791C4D3}
+	EndGlobalSection
+EndGlobal

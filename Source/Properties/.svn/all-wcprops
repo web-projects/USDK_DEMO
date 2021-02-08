@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/idt_prod_sw/!svn/ver/8035/Windows_VS_SDK_Core/trunk/UniversalSDKDemoPublic/Properties
+END
+AssemblyInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/idt_prod_sw/!svn/ver/8077/Windows_VS_SDK_Core/trunk/UniversalSDKDemoPublic/Properties/AssemblyInfo.cs
+END
+Settings.settings
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/idt_prod_sw/!svn/ver/8030/Windows_VS_SDK_Core/trunk/UniversalSDKDemoPublic/Properties/Settings.settings
+END
+Settings.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/idt_prod_sw/!svn/ver/8030/Windows_VS_SDK_Core/trunk/UniversalSDKDemoPublic/Properties/Settings.Designer.cs
+END
+Resources.resx
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/idt_prod_sw/!svn/ver/8030/Windows_VS_SDK_Core/trunk/UniversalSDKDemoPublic/Properties/Resources.resx
+END
+Resources.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/idt_prod_sw/!svn/ver/8030/Windows_VS_SDK_Core/trunk/UniversalSDKDemoPublic/Properties/Resources.Designer.cs
+END

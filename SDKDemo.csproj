@@ -1,0 +1,993 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4C2B03E-7DFB-4C60-889D-3436AD56F166}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>USDKDemo</RootNamespace>
+    <AssemblyName>UniversalSDKDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release SDK Only|AnyCPU'">
+    <OutputPath>bin\Release SDK Only\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release SDK Only|x64'">
+    <OutputPath>bin\x64\Release SDK Only\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release SDK Only|x86'">
+    <OutputPath>bin\x86\Release SDK Only\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Obfuscate|AnyCPU'">
+    <OutputPath>bin\Obfuscate\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Obfuscate|x64'">
+    <OutputPath>bin\x64\Obfuscate\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Obfuscate|x86'">
+    <OutputPath>bin\x86\Obfuscate\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ID_TECH_ICON.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseEmbed|AnyCPU'">
+    <OutputPath>bin\ReleaseEmbed\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseEmbed|x64'">
+    <OutputPath>bin\x64\ReleaseEmbed\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseEmbed|x86'">
+    <OutputPath>bin\x86\ReleaseEmbed\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugEmbed|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugEmbed\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugEmbed|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\DebugEmbed\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugEmbed|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\DebugEmbed\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C63A138828BBD535F6A3125DC05594CEC98EE1C0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestTimestampUrl>http://timestamp.digicert.com</ManifestTimestampUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Augusta_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_config.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_ctls, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_device, Version=1.2.12.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_device.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_emv, Version=1.2.8.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_icc, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_KB_config.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_ctls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_KB_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_device, Version=1.2.4.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_KB_device.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_emv, Version=1.2.4.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_KB_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_icc, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_KB_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_KB_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_msr, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_KB_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_KB_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_msr, Version=1.2.6.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Augusta_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="BTMag_config, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTMag_config.dll</HintPath>
+    </Reference>
+    <Reference Include="BTMag_ctls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTMag_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="BTMag_device, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTMag_device.dll</HintPath>
+    </Reference>
+    <Reference Include="BTMag_emv, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTMag_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="BTMag_icc_, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTMag_icc_.dll</HintPath>
+    </Reference>
+    <Reference Include="BTMag_lcd_, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTMag_lcd_.dll</HintPath>
+    </Reference>
+    <Reference Include="BTMag_msr, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTMag_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="BTMag_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTMag_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="BTPay_config, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTPay_config.dll</HintPath>
+    </Reference>
+    <Reference Include="BTPay_ctls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTPay_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="BTPay_device, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTPay_device.dll</HintPath>
+    </Reference>
+    <Reference Include="BTPay_emv, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTPay_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="BTPay_icc, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTPay_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="BTPay_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTPay_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="BTPay_msr, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTPay_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="BTPay_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\BTPay_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="CM100_config, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\CM100_config.dll</HintPath>
+    </Reference>
+    <Reference Include="CM100_ctls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\CM100_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="CM100_device, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\CM100_device.dll</HintPath>
+    </Reference>
+    <Reference Include="CM100_emv, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\CM100_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="CM100_icc, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\CM100_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="CM100_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\CM100_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="CM100_msr, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\CM100_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="CM100_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\CM100_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="IDTechPKI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\IDTechPKI.dll</HintPath>
+    </Reference>
+    <Reference Include="IDTechPKI.XmlSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\IDTechPKI.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="IDTechSDK, Version=1.2.177.7, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\IDTechSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="IDTechSDK.XmlSerializers, Version=1.2.177.4, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\IDTechSDK.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="IDTechWebSvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\IDTechWebSvc.dll</HintPath>
+    </Reference>
+    <Reference Include="K100_device, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\K100_device.dll</HintPath>
+    </Reference>
+    <Reference Include="K100_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\K100_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="KioskIII_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\KioskIII_config.dll</HintPath>
+    </Reference>
+    <Reference Include="KioskIII_ctls, Version=1.2.7.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\KioskIII_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="KioskIII_device, Version=1.2.17.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\KioskIII_device.dll</HintPath>
+    </Reference>
+    <Reference Include="KioskIII_emv, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\KioskIII_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="KioskIII_icc, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\KioskIII_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="KioskIII_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\KioskIII_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="KioskIII_msr, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\KioskIII_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="KioskIII_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\KioskIII_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="L100_config, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\L100_config.dll</HintPath>
+    </Reference>
+    <Reference Include="L100_ctls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\L100_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="L100_device, Version=1.2.6.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\L100_device.dll</HintPath>
+    </Reference>
+    <Reference Include="L100_emv, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\L100_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="L100_icc, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\L100_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="L100_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\L100_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="L100_msr, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\L100_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="L100_pin, Version=1.2.6.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\L100_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MiniSmartII_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\MiniSmartII_config.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniSmartII_ctls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\MiniSmartII_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniSmartII_device, Version=1.2.9.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\MiniSmartII_device.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniSmartII_emv, Version=1.2.8.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\MiniSmartII_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniSmartII_icc, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\MiniSmartII_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniSmartII_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\MiniSmartII_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniSmartII_msr, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\MiniSmartII_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniSmartII_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\MiniSmartII_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="NEO2_config, Version=1.2.15.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\NEO2_config.dll</HintPath>
+    </Reference>
+    <Reference Include="NEO2_ctls, Version=1.2.15.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\NEO2_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="NEO2_device, Version=1.2.54.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\NEO2_device.dll</HintPath>
+    </Reference>
+    <Reference Include="NEO2_emv, Version=1.2.19.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\NEO2_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="NEO2_icc, Version=1.2.8.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\NEO2_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="NEO2_lcd, Version=1.2.21.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\NEO2_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="NEO2_msr, Version=1.2.23.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\NEO2_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="NEO2_pin, Version=1.2.22.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\NEO2_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="NEO2_ws, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\NEO2_ws.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PKIWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\PKIWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="PKIWeb.XmlSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\PKIWeb.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="RKIUtility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\RKIUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="RKIWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\RKIWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="RKIWebPKISymmetric, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\RKIWebPKISymmetric.dll</HintPath>
+    </Reference>
+    <Reference Include="RKIWebPKISymmetric.XmlSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=MSIL">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\RKIWebPKISymmetric.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureKey_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SecureKey_config.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureKey_device, Version=1.2.7.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SecureKey_device.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureKey_msr, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SecureKey_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureMag_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SecureMag_config.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureMag_device, Version=1.2.7.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SecureMag_device.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureMag_msr, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SecureMag_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="SpectrumPro_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SpectrumPro_config.dll</HintPath>
+    </Reference>
+    <Reference Include="SpectrumPro_ctls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SpectrumPro_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="SpectrumPro_device, Version=1.2.11.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SpectrumPro_device.dll</HintPath>
+    </Reference>
+    <Reference Include="SpectrumPro_emv, Version=1.2.10.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SpectrumPro_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="SpectrumPro_icc, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SpectrumPro_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="SpectrumPro_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SpectrumPro_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="SpectrumPro_msr, Version=1.2.11.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SpectrumPro_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="SpectrumPro_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SpectrumPro_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="SpectrumPro_ws, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SpectrumPro_ws.dll</HintPath>
+    </Reference>
+    <Reference Include="SREDKey2_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SREDKey2_config.dll</HintPath>
+    </Reference>
+    <Reference Include="SREDKey2_device, Version=1.2.9.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SREDKey2_device.dll</HintPath>
+    </Reference>
+    <Reference Include="SREDKey2_msr, Version=1.2.6.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\SREDKey2_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.Ports, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Ports.5.0.0\lib\net461\System.IO.Ports.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Http, Version=4.7.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Http.4.7.0\lib\net461\System.ServiceModel.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives, Version=4.7.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Primitives.4.7.0\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TMS_device, Version=1.2.3.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\TMS_device.dll</HintPath>
+    </Reference>
+    <Reference Include="UniMag_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniMag_config.dll</HintPath>
+    </Reference>
+    <Reference Include="UniMag_ctls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniMag_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="UniMag_device, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniMag_device.dll</HintPath>
+    </Reference>
+    <Reference Include="UniMag_emv, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniMag_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="UniMag_icc, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniMag_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="UniMag_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniMag_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="UniMag_msr, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniMag_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="UniMag_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniMag_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPayI_V_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPayI_V_config.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPayI_V_ctls, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPayI_V_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPayI_V_device, Version=1.2.12.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPayI_V_device.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPayI_V_emv, Version=1.2.13.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPayI_V_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPayI_V_icc, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPayI_V_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPayI_V_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPayI_V_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPayI_V_msr, Version=1.2.6.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPayI_V_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPayI_V_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPayI_V_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPay_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPay_config.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPay_ctls, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPay_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPay_device, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPay_device.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPay_emv, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPay_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPay_icc, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPay_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPay_lcd, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPay_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPay_msr, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPay_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPay_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\UniPay_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="VendIII_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VendIII_config.dll</HintPath>
+    </Reference>
+    <Reference Include="VendIII_ctls, Version=1.2.6.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VendIII_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="VendIII_device, Version=1.2.10.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VendIII_device.dll</HintPath>
+    </Reference>
+    <Reference Include="VendIII_emv, Version=1.2.8.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VendIII_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="VendIII_icc, Version=1.2.3.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VendIII_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="VendIII_lcd, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VendIII_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="VendIII_msr, Version=1.2.4.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VendIII_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="VendIII_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VendIII_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendi_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Vendi_config.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendi_ctls, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Vendi_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendi_device, Version=1.2.11.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Vendi_device.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendi_emv, Version=1.2.6.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Vendi_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendi_icc, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Vendi_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendi_lcd, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Vendi_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendi_msr, Version=1.2.3.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Vendi_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="Vendi_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\Vendi_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="VP3300_config, Version=1.2.2.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP3300_config.dll</HintPath>
+    </Reference>
+    <Reference Include="VP3300_ctls, Version=1.2.10.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP3300_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="VP3300_device, Version=1.2.15.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP3300_device.dll</HintPath>
+    </Reference>
+    <Reference Include="VP3300_emv, Version=1.2.11.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP3300_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="VP3300_icc, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP3300_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="VP3300_msr, Version=1.2.7.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP3300_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="VP3300_pin, Version=1.2.1.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP3300_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="VP8800_config, Version=1.2.3.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP8800_config.dll</HintPath>
+    </Reference>
+    <Reference Include="VP8800_ctls, Version=1.2.12.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP8800_ctls.dll</HintPath>
+    </Reference>
+    <Reference Include="VP8800_device, Version=1.2.19.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP8800_device.dll</HintPath>
+    </Reference>
+    <Reference Include="VP8800_emv, Version=1.2.18.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP8800_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="VP8800_icc, Version=1.2.4.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP8800_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="VP8800_lcd, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP8800_lcd.dll</HintPath>
+    </Reference>
+    <Reference Include="VP8800_msr, Version=1.2.5.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP8800_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="VP8800_pin, Version=1.2.8.0, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP8800_pin.dll</HintPath>
+    </Reference>
+    <Reference Include="VP8800_ws, Version=1.2.7.2, Culture=neutral, PublicKeyToken=dbf9f7fd0c4c4b4a, processorArchitecture=x86">
+      <HintPath>packages\IDTechSDK.1.2.177.7\lib\net40\VP8800_ws.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CAPKForm.cs" />
+    <Compile Include="CAPKForm.Designer.cs">
+      <DependentUpon>CAPKForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigSettings.cs" />
+    <Compile Include="ConfigSettings.Designer.cs">
+      <DependentUpon>ConfigSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decrypt.cs" />
+    <Compile Include="Decrypt.Designer.cs">
+      <DependentUpon>Decrypt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDTechSoftwareDevice.cs" />
+    <Compile Include="IDTechTools.cs" />
+    <Compile Include="IDTResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IDTResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Signature.cs" />
+    <Compile Include="Signature.Designer.cs">
+      <DependentUpon>Signature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingleApplication.cs" />
+    <Compile Include="SoftwareController.cs" />
+    <Compile Include="SDKDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SDKDemo.designer.cs">
+      <DependentUpon>SDKDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="textbox.cs" />
+    <Compile Include="textbox.Designer.cs">
+      <DependentUpon>textbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AuthService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PKIService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\RKIService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CAPKForm.resx">
+      <DependentUpon>CAPKForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigSettings.resx">
+      <DependentUpon>ConfigSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decrypt.resx">
+      <DependentUpon>Decrypt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDTResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>IDTResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Signature.resx">
+      <DependentUpon>Signature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SDKDemo.resx">
+      <DependentUpon>SDKDemo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="textbox.resx">
+      <DependentUpon>textbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Universal Demo QuickStart Guide.pdf" />
+    <None Include="Web References\AuthService\Auth.wsdl" />
+    <None Include="Web References\AuthService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PKIService\CertService.wsdl" />
+    <None Include="Web References\PKIService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RKIService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RKIService\RKI.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\RKIService\RKI.disco" />
+    <None Include="Web References\PKIService\CertService.disco" />
+    <None Include="Web References\AuthService\Auth.disco" />
+    <None Include="Resources\008.png" />
+    <None Include="Resources\007.png" />
+    <None Include="Resources\006.png" />
+    <None Include="Resources\005.png" />
+    <None Include="Resources\004.png" />
+    <None Include="Resources\003.png" />
+    <None Include="Resources\002.png" />
+    <None Include="Resources\001.png" />
+    <None Include="Resources\default.png" />
+    <None Include="Resources\IDTech.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="Newtonsoft.Json\Bson\" />
+    <Folder Include="Newtonsoft.Json\Converters\" />
+    <Folder Include="Newtonsoft.Json\Linq\" />
+    <Folder Include="Newtonsoft.Json\Properties\" />
+    <Folder Include="Newtonsoft.Json\Schema\" />
+    <Folder Include="Newtonsoft.Json\Serialization\" />
+    <Folder Include="Newtonsoft.Json\Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://99.93.153.229:2001/Auth.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AuthService\</RelPath>
+      <UpdateFromURL>http://99.93.153.229:2001/Auth.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>UniversalSDKDemo_AuthService_WebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://99.93.153.229:4001/CertService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PKIService\</RelPath>
+      <UpdateFromURL>http://99.93.153.229:4001/CertService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>UniversalSDKDemo_PKIService_CertService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://99.93.153.229:4002/RKI.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\RKIService\</RelPath>
+      <UpdateFromURL>http://99.93.153.229:4002/RKI.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>UniversalSDKDemo_RKIService_RKI</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ChangeLog.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ID_TECH_ICON.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Release signtool.exe sign /a "$(ProjectDir)obj\$(ConfigurationName)\$(TargetName)$(TargetExt)"
+if $(ConfigurationName) == Release signtool.exe Timestamp /t http://timestamp.digicert.com "$(ProjectDir)obj\$(ConfigurationName)\$(TargetName)$(TargetExt)"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="packages\IDTechSDK.1.2.177.7\build\net40\IDTechSDK.targets" Condition="Exists('packages\IDTechSDK.1.2.177.7\build\net40\IDTechSDK.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\IDTechSDK.1.2.177.7\build\net40\IDTechSDK.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\IDTechSDK.1.2.177.7\build\net40\IDTechSDK.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

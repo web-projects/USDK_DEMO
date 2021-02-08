@@ -1,0 +1,99 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="USDKDemo.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NEOBoard_Demo_RKI_RKIService_RKIService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://demo.idtechweb.com:4002/RKI.asmx</Value>
+    </Setting>
+    <Setting Name="USDK_PKI_PKIService_CertService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://demo.idtechweb.com:4001/CertService.asmx</Value>
+    </Setting>
+    <Setting Name="USDK_PKI_AuthService_WebService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://demo.idtechweb.com:2001/Auth.asmx</Value>
+    </Setting>
+    <Setting Name="NEO_Tool_PKIService_CertService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://demo.idtechweb.com:4001/CertService.asmx</Value>
+    </Setting>
+    <Setting Name="NEO_Tool_AuthService_WebService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://demo.idtechweb.com:2001/Auth.asmx</Value>
+    </Setting>
+    <Setting Name="UniversalSDKDemo_AuthService_WebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://demo.idtechweb.com:2001/Auth.asmx</Value>
+    </Setting>
+    <Setting Name="UniversalSDKDemo_PKIService_CertService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://demo.idtechweb.com:4001/CertService.asmx</Value>
+    </Setting>
+    <Setting Name="UniversalSDKDemo_RKIService_RKI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://demo.idtechweb.com:4002/RKI.asmx</Value>
+    </Setting>
+    <Setting Name="LogFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="custName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="custPhone" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="custEmail" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="pae1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*PAE</Value>
+    </Setting>
+    <Setting Name="pae2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*PAE</Value>
+    </Setting>
+    <Setting Name="pae3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*PAE</Value>
+    </Setting>
+    <Setting Name="pae4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*PAE</Value>
+    </Setting>
+    <Setting Name="pae5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*PAE</Value>
+    </Setting>
+    <Setting Name="pae6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*PAE</Value>
+    </Setting>
+    <Setting Name="pae7" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*PAE</Value>
+    </Setting>
+    <Setting Name="pae8" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*PAE</Value>
+    </Setting>
+    <Setting Name="lastip" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.12.34.41</Value>
+    </Setting>
+    <Setting Name="lastFW" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="lastTransfer" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="lastCAPK" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="lastSerial" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="lastBaud" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="s_addMemo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="s_abortFirmware" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="s_memo" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="s_openLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="s_saveLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

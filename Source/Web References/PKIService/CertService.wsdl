@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://idtechproducts.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://idtechproducts.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://idtechproducts.com/">
+      <s:element name="AuthenticateUser">
+        <s:complexType />
+      </s:element>
+      <s:element name="AuthenticateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SecuredWebServiceHeader" type="tns:SecuredWebServiceHeader" />
+      <s:complexType name="SecuredWebServiceHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthenticatedToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EchoMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsTobeHashed" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="DeviceTokenRequestLog">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeviceTokenRequestLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceTokenRequestLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStackCert">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateStackCertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateStackCertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Signing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_fileContents" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SigningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SigningResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceClientCerts">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeviceClientCertsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceClientCertsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SigningSingleCert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_fileContents" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SigningSingleCertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SigningSingleCertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSignature">
+        <s:complexType />
+      </s:element>
+      <s:element name="DataSignatureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataSignatureResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FWCodeSigning">
+        <s:complexType />
+      </s:element>
+      <s:element name="FWCodeSigningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FWCodeSigningResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MFGCommandSigning">
+        <s:complexType />
+      </s:element>
+      <s:element name="MFGCommandSigningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MFGCommandSigningResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MSGSigning">
+        <s:complexType />
+      </s:element>
+      <s:element name="MSGSigningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MSGSigningResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplicationAuthSigning">
+        <s:complexType />
+      </s:element>
+      <s:element name="ApplicationAuthSigningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationAuthSigningResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceCACertList">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeviceCACertListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceCACertListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductModelList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_fileContents" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductModelListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductModelListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthenticateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeviceTokenRequestLogSoapIn">
+    <wsdl:part name="parameters" element="tns:DeviceTokenRequestLog" />
+  </wsdl:message>
+  <wsdl:message name="DeviceTokenRequestLogSoapOut">
+    <wsdl:part name="parameters" element="tns:DeviceTokenRequestLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceTokenRequestLogSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStackCertSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStackCert" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStackCertSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStackCertResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStackCertSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="SigningSoapIn">
+    <wsdl:part name="parameters" element="tns:Signing" />
+  </wsdl:message>
+  <wsdl:message name="SigningSoapOut">
+    <wsdl:part name="parameters" element="tns:SigningResponse" />
+  </wsdl:message>
+  <wsdl:message name="SigningSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeviceClientCertsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeviceClientCerts" />
+  </wsdl:message>
+  <wsdl:message name="DeviceClientCertsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeviceClientCertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceClientCertsSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="SigningSingleCertSoapIn">
+    <wsdl:part name="parameters" element="tns:SigningSingleCert" />
+  </wsdl:message>
+  <wsdl:message name="SigningSingleCertSoapOut">
+    <wsdl:part name="parameters" element="tns:SigningSingleCertResponse" />
+  </wsdl:message>
+  <wsdl:message name="SigningSingleCertSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DataSignatureSoapIn">
+    <wsdl:part name="parameters" element="tns:DataSignature" />
+  </wsdl:message>
+  <wsdl:message name="DataSignatureSoapOut">
+    <wsdl:part name="parameters" element="tns:DataSignatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataSignatureSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="FWCodeSigningSoapIn">
+    <wsdl:part name="parameters" element="tns:FWCodeSigning" />
+  </wsdl:message>
+  <wsdl:message name="FWCodeSigningSoapOut">
+    <wsdl:part name="parameters" element="tns:FWCodeSigningResponse" />
+  </wsdl:message>
+  <wsdl:message name="FWCodeSigningSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="MFGCommandSigningSoapIn">
+    <wsdl:part name="parameters" element="tns:MFGCommandSigning" />
+  </wsdl:message>
+  <wsdl:message name="MFGCommandSigningSoapOut">
+    <wsdl:part name="parameters" element="tns:MFGCommandSigningResponse" />
+  </wsdl:message>
+  <wsdl:message name="MFGCommandSigningSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="MSGSigningSoapIn">
+    <wsdl:part name="parameters" element="tns:MSGSigning" />
+  </wsdl:message>
+  <wsdl:message name="MSGSigningSoapOut">
+    <wsdl:part name="parameters" element="tns:MSGSigningResponse" />
+  </wsdl:message>
+  <wsdl:message name="MSGSigningSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationAuthSigningSoapIn">
+    <wsdl:part name="parameters" element="tns:ApplicationAuthSigning" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationAuthSigningSoapOut">
+    <wsdl:part name="parameters" element="tns:ApplicationAuthSigningResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationAuthSigningSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeviceCACertListSoapIn">
+    <wsdl:part name="parameters" element="tns:DeviceCACertList" />
+  </wsdl:message>
+  <wsdl:message name="DeviceCACertListSoapOut">
+    <wsdl:part name="parameters" element="tns:DeviceCACertListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceCACertListSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="ProductModelListSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductModelList" />
+  </wsdl:message>
+  <wsdl:message name="ProductModelListSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductModelListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductModelListSecuredWebServiceHeader">
+    <wsdl:part name="SecuredWebServiceHeader" element="tns:SecuredWebServiceHeader" />
+  </wsdl:message>
+  <wsdl:portType name="CertServiceSoap">
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input message="tns:AuthenticateUserSoapIn" />
+      <wsdl:output message="tns:AuthenticateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceTokenRequestLog">
+      <wsdl:input message="tns:DeviceTokenRequestLogSoapIn" />
+      <wsdl:output message="tns:DeviceTokenRequestLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStackCert">
+      <wsdl:input message="tns:UpdateStackCertSoapIn" />
+      <wsdl:output message="tns:UpdateStackCertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Signing">
+      <wsdl:input message="tns:SigningSoapIn" />
+      <wsdl:output message="tns:SigningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceClientCerts">
+      <wsdl:input message="tns:DeviceClientCertsSoapIn" />
+      <wsdl:output message="tns:DeviceClientCertsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SigningSingleCert">
+      <wsdl:input message="tns:SigningSingleCertSoapIn" />
+      <wsdl:output message="tns:SigningSingleCertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataSignature">
+      <wsdl:input message="tns:DataSignatureSoapIn" />
+      <wsdl:output message="tns:DataSignatureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FWCodeSigning">
+      <wsdl:input message="tns:FWCodeSigningSoapIn" />
+      <wsdl:output message="tns:FWCodeSigningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MFGCommandSigning">
+      <wsdl:input message="tns:MFGCommandSigningSoapIn" />
+      <wsdl:output message="tns:MFGCommandSigningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MSGSigning">
+      <wsdl:input message="tns:MSGSigningSoapIn" />
+      <wsdl:output message="tns:MSGSigningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplicationAuthSigning">
+      <wsdl:input message="tns:ApplicationAuthSigningSoapIn" />
+      <wsdl:output message="tns:ApplicationAuthSigningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceCACertList">
+      <wsdl:input message="tns:DeviceCACertListSoapIn" />
+      <wsdl:output message="tns:DeviceCACertListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductModelList">
+      <wsdl:input message="tns:ProductModelListSoapIn" />
+      <wsdl:output message="tns:ProductModelListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CertServiceSoap" type="tns:CertServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://idtechproducts.com/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AuthenticateUserSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceTokenRequestLog">
+      <soap:operation soapAction="http://idtechproducts.com/DeviceTokenRequestLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeviceTokenRequestLogSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStackCert">
+      <soap:operation soapAction="http://idtechproducts.com/UpdateStackCert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateStackCertSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Signing">
+      <soap:operation soapAction="http://idtechproducts.com/Signing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceClientCerts">
+      <soap:operation soapAction="http://idtechproducts.com/DeviceClientCerts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeviceClientCertsSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SigningSingleCert">
+      <soap:operation soapAction="http://idtechproducts.com/SigningSingleCert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SigningSingleCertSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataSignature">
+      <soap:operation soapAction="http://idtechproducts.com/DataSignature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DataSignatureSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FWCodeSigning">
+      <soap:operation soapAction="http://idtechproducts.com/FWCodeSigning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FWCodeSigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MFGCommandSigning">
+      <soap:operation soapAction="http://idtechproducts.com/MFGCommandSigning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MFGCommandSigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MSGSigning">
+      <soap:operation soapAction="http://idtechproducts.com/MSGSigning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MSGSigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplicationAuthSigning">
+      <soap:operation soapAction="http://idtechproducts.com/ApplicationAuthSigning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ApplicationAuthSigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceCACertList">
+      <soap:operation soapAction="http://idtechproducts.com/DeviceCACertList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeviceCACertListSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductModelList">
+      <soap:operation soapAction="http://idtechproducts.com/ProductModelList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ProductModelListSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CertServiceSoap12" type="tns:CertServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://idtechproducts.com/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AuthenticateUserSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceTokenRequestLog">
+      <soap12:operation soapAction="http://idtechproducts.com/DeviceTokenRequestLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeviceTokenRequestLogSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStackCert">
+      <soap12:operation soapAction="http://idtechproducts.com/UpdateStackCert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateStackCertSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Signing">
+      <soap12:operation soapAction="http://idtechproducts.com/Signing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceClientCerts">
+      <soap12:operation soapAction="http://idtechproducts.com/DeviceClientCerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeviceClientCertsSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SigningSingleCert">
+      <soap12:operation soapAction="http://idtechproducts.com/SigningSingleCert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SigningSingleCertSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataSignature">
+      <soap12:operation soapAction="http://idtechproducts.com/DataSignature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DataSignatureSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FWCodeSigning">
+      <soap12:operation soapAction="http://idtechproducts.com/FWCodeSigning" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FWCodeSigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MFGCommandSigning">
+      <soap12:operation soapAction="http://idtechproducts.com/MFGCommandSigning" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MFGCommandSigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MSGSigning">
+      <soap12:operation soapAction="http://idtechproducts.com/MSGSigning" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MSGSigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplicationAuthSigning">
+      <soap12:operation soapAction="http://idtechproducts.com/ApplicationAuthSigning" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ApplicationAuthSigningSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceCACertList">
+      <soap12:operation soapAction="http://idtechproducts.com/DeviceCACertList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeviceCACertListSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductModelList">
+      <soap12:operation soapAction="http://idtechproducts.com/ProductModelList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ProductModelListSecuredWebServiceHeader" part="SecuredWebServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CertService">
+    <wsdl:port name="CertServiceSoap" binding="tns:CertServiceSoap">
+      <soap:address location="http://demo.idtechweb.com:4001/CertService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CertServiceSoap12" binding="tns:CertServiceSoap12">
+      <soap12:address location="http://demo.idtechweb.com:4001/CertService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,13 @@
+END USER LICENSE AGREEMENT
+
+This copy of ID Tech .Net Standard 2.0 Device Library ("the Software Product") and accompanying documentation is licensed and not sold. This Software Product is protected by copyright laws and treaties, as well as laws and treaties related to other forms of intellectual property. ID Tech Products or its subsidiaries, affiliates, and suppliers (collectively "ID Tech") own intellectual property rights in the Software Product. The Licensee's ("you" or "your") license to download, use, copy, or change the Software Product is subject to these rights and to all the terms and conditions of this End Users License Agreement ("Agreement").
+
+Acceptance
+YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT BY SELECTING THE "ACCEPT" OPTION AND DOWNLOADING THE SOFTWARE PRODUCT OR BY INSTALLING, USING, OR COPYING THE SOFTWARE PRODUCT. YOU MUST AGREE TO ALL OF THE TERMS OF THIS AGREEMENT BEFORE YOU WILL BE ALLOWED TO DOWNLOAD THE SOFTWARE PRODUCT. IF YOU DO NOT AGREE TO ALL OF THE TERMS OF THIS AGREEMENT, YOU MUST SELECT "DECLINE" AND YOU MUST NOT INSTALL, USE, OR COPY THE SOFTWARE PRODUCT.
+
+License Grant
+This agreement entitles you to install and use this Software Product in unlimited distributions. In addition, you may make an archival copy of the Software Product. The archival copy must be on a storage medium other than a hard drive, and may only be used for the reinstallation of the Software Product. Multiple copy use or installation is allowed.
+
+Restrictions on Transfer
+Without first obtaining the express written consent of ID Tech, you may not assign your rights and obligations under this Agreement, or redistribute, encumber, sell, rent, lease, sublicense, or otherwise transfer your rights to the Software Product.
+
